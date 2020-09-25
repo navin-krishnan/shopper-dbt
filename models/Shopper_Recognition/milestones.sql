@@ -1,3 +1,4 @@
+
 WITH order_stats AS(
     SELECT
         driver_id,
