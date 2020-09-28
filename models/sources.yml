@@ -1,0 +1,99 @@
+version: 2
+sources:
+  - name: og_views
+    database: PRD_DATALAKEHOUSE
+    schema: og_views
+    loader: fivetran
+    loaded_at_field: updated_at
+    tables:
+      - name: admins
+      - name: categories
+      - name: customer_addresses
+      - name: driver_addresses
+      - name: drivers
+      - name: driver_certifications
+      - name: envoy_customers
+      - name: envoy_deliveries
+      - name: envoy_delivery_certifications
+      - name: envoy_reassignments
+      - name: flight_plan_delivery_times
+      - name: metros
+      - name: metro_stores
+      - name: order_certifications
+      - name: orders
+      - name: order_offers
+      - name: order_lines
+      - name: order_reassignments
+      - name: order_shopping_progresses
+      - name: phone_numbers
+      - name: product_categorizations
+      - name: promo_pay_offers
+      - name: ppo_orders
+      - name: ratings
+      - name: shopping_duration_estimates
+      - name: shopper_ranks
+      - name: shopper_signups
+      - name: shopper_pay_pay_bundle
+      - name: shopper_pay_pay_bundle_order
+      - name: shopper_pay_metro
+      - name: shopper_pay_order
+      - name: shopper_pay_pay_rate
+      - name: shopper_pay_payment_ledger
+      - name: shopper_pay_referral
+      - name: shopper_pay_special_payment
+      - name: stores
+      - name: store_locations
+      - name: store_location_hours
+      - name: time_slots
+      - name: time_slot_availabilities
+      - name: time_slot_availability_certifications
+      - name: zip_codes
+      - name: zones
+      
+  - name: ng_views
+    database: PRD_DATALAKEHOUSE
+    schema: ng_views
+    loader: fivetran
+    loaded_at_field: updated_at
+    tables:
+      - name: aviator_order
+      - name: background_checks_background_check
+      - name: flight_plans_flight_plans_events
+      - name: ground_control_order_events
+      - name: aviator_order_rating
+
+  - name: shipt_events
+    database: PRD_DATALAKEHOUSE
+    schema: stage
+    loader: fivetran
+    loaded_at_field: updated_at
+    tables:
+      - name: lake_offersvc
+
+  - name: data_science
+    database: PRD_DATALAKEHOUSE
+    schema: data_science
+    loader: fivetran
+    loaded_at_field: updated_at
+    tables:
+      - name: ops_metros
+      - name: rw_aviator_order_events
+      - name: vw_order_types
+      - name: ppo_packs_orders
+
+  - name: shipt_datamart
+    database: PRD_DATALAKEHOUSE
+    schema: datamart
+    loader: fivetran
+    loaded_at_field: updated_at
+    tables:
+      - name: fact_orders
+      - name: dim_orders
+      - name: dim_metro
+      - name: dim_zones
+      - name: dim_store
+      - name: fact_shopper_pay_order
+      - name: dim_shopper_pay_order_status
+      - name: dim_bundle
+      - name: dim_order_bundle
+      - name: dim_shopper
