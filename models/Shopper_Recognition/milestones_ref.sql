@@ -1,4 +1,3 @@
-
 with order_stats as (
      
      select * from {{ ref('driver_orders_ms') }}           
