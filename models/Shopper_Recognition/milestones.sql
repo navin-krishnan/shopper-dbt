@@ -205,7 +205,7 @@ UNION ALL
 
 ),
 
-first_rating AS(
+ 
     SELECT 
           order_id,
           driver_id,
