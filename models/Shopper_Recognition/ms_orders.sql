@@ -43,7 +43,7 @@ SELECT
          WHEN ar.wrong_items = false AND ar.damaged_items = false 
               AND ar.v2_late_delivery = false AND ar.v2_poor_substitution_choices = false 
               AND ar.unfriendly_driver = false AND ar.missing_items = false
-              AND r.ignore = false
+              AND (r.ignore = FALSE OR r.ignore IS NULL)
          THEN 1 else 0 end)::int as good
 
 
