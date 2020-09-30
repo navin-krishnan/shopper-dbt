@@ -10,6 +10,7 @@ final as (
       email as "Email",
       metro as "Metro",
       wk as "Week",
+      DATE_TRUNC('week', CURRENT_DATE) as "Current Week",
       local_delivery_week,
       order_cnt as "Last Weekend Orders",
       past_2,

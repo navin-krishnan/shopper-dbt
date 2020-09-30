@@ -56,7 +56,7 @@ WHERE o.STATUS = 'delivered'
       AND d.email not ilike '%@shipt%'
       and d.disabled_at IS NULL
       and d.deactivated_at IS NULL
-      AND DATE_TRUNC('week', local_delivered_at) >= DATE_TRUNC('week', CURRENT_DATE) - INTERVAL '4 WEEKS'
+      AND DATE_TRUNC('week', local_delivered_at) >= DATE_TRUNC('week', CURRENT_DATE) - INTERVAL '9 WEEKS'
 
 UNION ALL
 
@@ -78,5 +78,5 @@ WHERE ed.STATUS = 'delivered'
       AND d.email not ilike '%@shipt%'
       and d.disabled_at IS NULL
       and d.deactivated_at IS NULL
-      AND DATE_TRUNC('week', local_delivered_at) >= DATE_TRUNC('week', CURRENT_DATE) - INTERVAL '4 WEEKS'
+      AND DATE_TRUNC('week', local_delivered_at) >= DATE_TRUNC('week', CURRENT_DATE) - INTERVAL '9 WEEKS'
 
