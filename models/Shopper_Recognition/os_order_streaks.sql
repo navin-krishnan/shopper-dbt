@@ -15,9 +15,12 @@ final as (
       past_7,
       past_14,
       past_30,
-      IFF(past_7 = 7, TRUE, FALSE) AS "7 Day Streak",
-      IFF(past_14 = 14, TRUE, FALSE) AS "14 Day Streak",
-      IFF(past_30 = 30, TRUE, FALSE) AS "30 Day Streak"
+      CASE
+       WHEN past_30 = 30 THEN '30 Day Streak'
+       WHEN past_14 = 14 THEN '14 Day Streak'
+       WHEN past_7 = 7 THEN '7 Day Streak'
+       ELSE 'None' 
+      END as "Consecutive Days Active"  
    
    FROM daily_stats
    WHERE local_delivered_at IS NOT NULL
